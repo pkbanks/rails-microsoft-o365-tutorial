@@ -4,7 +4,6 @@ class ContactsController < ApplicationController
 
   def index
     token = get_access_token
-    puts "*** token: #{token} ***"
     if token
       # If a token is present in the session, get contacts
       callback = Proc.new do |r| 
@@ -16,6 +15,14 @@ class ContactsController < ApplicationController
         &callback)
 
       @contacts = graph.me.contacts.order_by('givenName asc')
+
+      @contacts.each do |contact|
+        new_contact = Contact.create(
+          first_name: contact.given_name,
+          last_name: contact.surname,
+          email: contact.email_addresses[0].address
+          )
+      end
     else
       # If no token, redirect to the root url so user
       # can sign in.

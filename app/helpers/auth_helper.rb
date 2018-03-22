@@ -1,10 +1,10 @@
 module AuthHelper
 
   # App's client ID. Register the app in Application Registration Portal to get this value.
-  CLIENT_ID = ENV['CLIENT_ID']
+  CLIENT_ID = ENV['MICROSOFT_ID']
 
   # App's client secret. Register the app in Application Registration Portal to get this value.
-  CLIENT_SECRET = ENV['CLIENT_SECRET']
+  CLIENT_SECRET = ENV['MICROSOFT_SECRET']
 
   # Scopes required by the app
   SCOPES = [ 'openid',
