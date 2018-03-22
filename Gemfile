@@ -7,6 +7,8 @@ end
 
 gem 'oauth2'
 gem 'activerecord-session_store'
+gem 'microsoft_graph', '~> 0.1.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
