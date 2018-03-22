@@ -45,6 +45,8 @@ module AuthHelper
   def get_access_token
     # Get the current token hash from session
     token_hash = session[:azure_token]
+    puts "**** token_hash ****"
+    puts token_hash
 
     client = OAuth2::Client.new(CLIENT_ID,
                                 CLIENT_SECRET,
